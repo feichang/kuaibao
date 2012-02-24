@@ -1,0 +1,41 @@
+div(class="navbar navbar-fixed-top")
+	div(class="navbar-inner")
+		div(class="container")
+			a(class="btn btn-navbar",data-toggle="collapse",data-target=".nav-collapse")
+				span(class="icon-bar")
+				span(class="icon-bar")
+				span(class="icon-bar")
+			a(class="brand logo",href="#") 快报平台
+			div(class="nav-collapse")
+				ul(class="nav")
+					li
+						a(href="/") 今日快报
+					li
+						a(href="/history") 往期快报
+					li
+						a(href="/share") 分享快报
+					li(class="active")
+						a(href="/feed") 订阅快报
+			a(class="powerby",href="./index.html") Power by 飞长
+div(class="container")
+	div(class="row-fluid")
+		div(class="span8")
+			form(class="form-horizontal",method="post",action="/addFeed")
+				fieldset
+					legend 邮件订阅每日快报
+					div(class="control-group")
+						label(class="control-label",for="input_name") 名字(花名)
+						div(class="controls")
+							input(type="text",class="input-xlarge span11",id="input_name",name="input_name")
+					div(class="control-group")
+						label(class="control-label",for="input_email") 邮箱地址
+						div(class="controls")
+							input(type="text",class="input-xlarge span11",id="input_email",name="input_email")
+					div(class="form-actions")
+						button(type="submit",class="btn btn-primary add_feed_btn") 订阅
+						button(class="btn cancel_feed_btn") 取消订阅
+		div(class="span4")
+			Level 1 of column
+
+script(src="../javascripts/jquery.js")
+script(src="../bootstrap/js/bootstrap.min.js")

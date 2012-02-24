@@ -1,0 +1,27 @@
+body {
+  margin-top: 50px;
+}
+.container .logo {
+  background: url(../images/feed.png) 0 3px no-repeat;
+  text-indent: 14px;
+}
+.container .add_btn {
+  margin-right: 5px;
+}
+.container .add_feed_btn {
+  margin-right: 5px;
+}
+.container .powerby {
+  padding-right: 0;
+  padding-left: 0;
+  padding: 8px 20px 12px;
+  margin-left: 20px;
+  float: right;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.1), 0 0 30px rgba(255, 255, 255, 0.125);
+  -webkit-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  transition: all .2s linear;
+}

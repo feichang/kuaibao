@@ -63,7 +63,7 @@ function getFeed(){
  * @time 周一到周五 14:33:15 发送
  */
 var cronJob = require('cron').CronJob;
-cronJob('30 59 22 * * 1-7', function(){
+cronJob('00 20 15 * * 2-6', function(){
 	feed_today = '<h2>今日快报</h2><table><thead><tr><td>#</td><td>标题</td><td>分享着</td><td>备注</td><td>标签</td><tbody>';
 	Article.find({'date': new Date().toDateString()},function(err,docs){
 		for(var i in docs){
@@ -78,5 +78,5 @@ cronJob('30 59 22 * * 1-7', function(){
 	});
 });
 
-app.listen(3000);
+app.listen(80);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

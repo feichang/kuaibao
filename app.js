@@ -63,7 +63,7 @@ function getFeed(){
  * @time 周一到周五 14:33:15 发送
  */
 var cronJob = require('cron').CronJob;
-cronJob('00 20 16 * * 2-6', function(){
+cronJob('00 44 16 * * 2-6', function(){
 	feed_today = '<h2>今日快报</h2><table><thead><tr><td>#</td><td>标题</td><td>分享着</td><td>备注</td><td>标签</td><tbody>';
 	Article.find({'date': new Date().toDateString()},function(err,docs){
 		for(var i in docs){
@@ -75,15 +75,17 @@ cronJob('00 20 16 * * 2-6', function(){
 		User.find({},function(err,users){
 			//console.log(users);
 			//mail.send_all(users,'今日快报 - 快报平台',feed_today);
-			var title = '今日快报 - 快报平台';
+			var title = 'IT News Today';
 			for(var i in users){
-				mail.send(users[i].email,title,feed_today,function(error,success){
-					if(success){
-						console.log('发送给 '+ users[i].email +'成功');
-					}else{
-						console.log(error);
-					}
-				});
+				(function(i){
+					mail.send(users[i].email,title,feed_today,function(error,success){
+						if(success){
+							console.log('发送给 '+ users[i].email +'成功');
+						}else{
+							console.log(error);
+						}
+					});
+				})(i);
 			}
 		});
 	});

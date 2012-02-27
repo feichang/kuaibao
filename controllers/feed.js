@@ -28,6 +28,8 @@ function add_feed(req, res){
 							title: '订阅成功',
 							feed_info: ' 订阅成功！'
 						});
+					}else{
+						console.log(error);
 					}
 				});
 				console.log('send exe finish');

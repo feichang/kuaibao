@@ -21,7 +21,7 @@ if($('#canlendar')){
 	    		console.log(doc);
 	    		for(var i in doc){
 	    			console.log(doc);
-	    			if(docs[i].title && docs[i].url){
+	    			if(doc[i].title && doc[i].url){
 	    				data += '<tr><td>'+doc[i].date+'</td><td><a href="'+doc[i].url+'" target="_blank">'+doc[i].title+'</a></td><td>'+doc[i].author
 	    					+'</td><td>'+doc[i].note+'</td><td>'+doc[i].tag+'</td></tr>';
 	    			}

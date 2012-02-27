@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
-var db       = mongoose.connect('mongodb://127.0.0.1/kuaibao');
+var db       = mongoose.connect('mongodb://127.0.0.1/feed8');
 
 mongoose.model('user', new Schema({
   username: String

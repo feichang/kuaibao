@@ -18,6 +18,28 @@ div(class="navbar navbar-fixed-top")
 						a(href="/feed") 订阅快报
 			a(class="powerby",href="./index.html") Power by 飞长
 div(class="container")
-	p comming~
+	div(class="row-fluid")
+		div(class="span12")
+			table(class="table table-striped")
+				thead
+					tr
+						th #
+						th 标题
+						th 分享者
+						th 备注
+						th 标签
+				tbody
+					- if (result.length)
+							- result.forEach(function(item){
+								- if (item.title && item.url)
+									tr
+										td #{item.date.getFullYear()+'-'+item.date.getMonth()+1 + '-' +item.date.getDate()}
+										td
+											a(href="#{item.url}",target="_blank")
+												#{item.title}
+										td #{item.author}
+										td #{item.note}
+										td #{item.tag}
+							- })
 script(src="../javascripts/jquery.js")
 script(src="../bootstrap/js/bootstrap.min.js")

@@ -43,6 +43,7 @@ app.get('/share', routes.page_share);
 app.get('/feed', routes.page_feed);
 app.post('/addArticle', routes.add_article);
 app.post('/addFeed', routes.add_feed);
+app.post('/getNewsByDate', routes.read_by_date);
 
 /**
  * 获取当日快报

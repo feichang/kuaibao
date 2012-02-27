@@ -8,9 +8,9 @@ div(class="navbar navbar-fixed-top")
 			a(class="brand logo",href="#") 快报平台
 			div(class="nav-collapse")
 				ul(class="nav")
-					li
-						a(href="/") 今日快报
 					li(class="active")
+						a(href="/") 今日快报
+					li
 						a(href="/history") 往期快报
 					li
 						a(href="/share") 分享快报
@@ -18,12 +18,11 @@ div(class="navbar navbar-fixed-top")
 						a(href="/feed") 订阅快报
 			a(class="powerby",href="http://veryued.org") Power by 飞长
 div(class="container")
-	div(id="calendar")
-	p(class="J_back",style="display:none")
-		a(class="btn btn-success",href="/history") 
-			i(class="icon-chevron-left icon-white")
-			返回日历
-	div(id="J_date_news")
+	div(class="alert alert-info J_info")
+		- if (feed_info)
+			#{feed_info} 系统将在5秒后自动跳转到【今日快报】
+
 script(src="../javascripts/jquery.js")
+script(src="../javascripts/custom.js")
 script(src="../bootstrap/js/bootstrap.min.js")
-script(src="../javascripts/fullcalendar.min.js")
+script(src="../bootstrap/js/bootstrap-modal.js")

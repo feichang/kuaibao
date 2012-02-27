@@ -7,18 +7,23 @@ function read_today(res, page){
 	Article.find({'date': new Date().toDateString()},function(err,docs){
 		res.render(page, {
 			title: '今日快报 - 快报平台',
-			result: docs
+			result: docs,
+			feed_info: ''
 		});
 	});
 }
-function read_by_date(res, page, time){
-	//var time = new Date(2012,1,26).toDateString();
-	console.log(time);
+function read_by_date(req,res){
+	console.log(2);
+	var time = req.body.time;
+	console.log(req.body.time);
 	Article.find({'date': time},function(err,docs){
-		res.render(page, {
+		/*res.render(page, {
 			title: '今日快报 - 快报平台',
 			result: docs
-		});
+		});*/
+		res.contentType('json');
+  		res.send(JSON.stringify({doc: docs}));
+  		console.log('end');
 	});
 }
 function add_article(req, res){
@@ -32,7 +37,10 @@ function add_article(req, res){
 		date: new Date().toDateString()
 	});
 	a.save(function(err, doc){
-		res.redirect('/');
+		res.render('info',{
+			title: '分享成功',
+			feed_info: '分享成功！'
+		});
 	});
 }
 

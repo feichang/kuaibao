@@ -16,7 +16,7 @@ div(class="navbar navbar-fixed-top")
 						a(href="/share") 分享快报
 					li
 						a(href="/feed") 订阅快报
-			a(class="powerby",href="./index.html") Power by 飞长
+			a(class="powerby",href="http://veryued.org") Power by 飞长
 div(class="container")
 	div(class="row-fluid")
 		div(class="span9")
@@ -57,11 +57,16 @@ div(class="container")
 						td
 							
 				tbody
-					- if (result.length)
-							- result.forEach(function(item){
-								tr
-									td #{item}
-							- })
+			table(class="table")
+				thead
+					tr
+						td
+							h3
+								最新分享者
+						td
+							
+				tbody
+					
 				
 
 script(src="../javascripts/jquery.js")

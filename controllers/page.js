@@ -26,7 +26,10 @@ function share(req, res){
 }
 
 function history(req, res){
-	article.read_by_date(res, 'history', new Date(new Date().getFullYear(), new Date().getMonth() - 1, new Date().getDate() - 1).toDateString());
+	//article.read_by_date(res, 'history',time.toDateString());
+	res.render('history', {
+	    title: '往期快报 - 快报平台'
+	  });
 }
 
 function feed(req, res){

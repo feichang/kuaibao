@@ -25,8 +25,8 @@ function send(email,title,content){
 	var transport = nodemailer.createTransport("SMTP", {
 	    service: 'Gmail', // use well known service
 	    auth: {
-	        user: "veryued@gmail.com",
-	        pass: "a123456788"
+	        user: "@gmail.com",
+	        pass: ""
 	    }
 	});
 	console.log('SMTP Configured');

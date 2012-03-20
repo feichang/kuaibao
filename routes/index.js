@@ -8,6 +8,7 @@ var article = require('../controllers/article');
 exports.add_article = article.add_article;
 exports.read_by_today = article.read_by_today;
 exports.read_by_date = article.read_by_date;
+exports.get_all = article.get_all;
 
 var feed = require('../controllers/feed');
 exports.add_feed = feed.add_feed;

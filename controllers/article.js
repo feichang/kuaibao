@@ -44,10 +44,20 @@ function add_article(req, res){
 	});
 }
 
+function get_all(req, res){
+	Article.find({},function(err,docs){
+		res.render('all', {
+			title: '今日快报 - 快报平台',
+			result: docs
+		});
+	});
+}
+
 
 exports.read_today = read_today;
 exports.read_by_date = read_by_date;
 exports.add_article = add_article;
+exports.get_all = get_all;
 
 //next version to do
 /*

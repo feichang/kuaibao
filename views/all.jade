@@ -19,18 +19,36 @@ div(class="navbar navbar-fixed-top")
 			a(class="powerby",href="http://veryued.org") Power by 飞长
 div(class="container")
 	div(id="viewSwitch",class="btn-group viewswitch")
-		a(href="/history",class="btn v-calendar disabled")
+		a(href="/history",class="btn v-calendar")
 			i(class="icon-calendar")
 			日历视图
-		a(href="/all",class="btn v-list")
+		a(href="/all",class="btn v-list disabled")
 			i(class="icon-list")
 			列表视图
-	div(id="calendar")
-	p(class="J_back",style="display:none")
-		a(class="btn btn-success",href="/history") 
-			i(class="icon-chevron-left icon-white")
-			返回日历
-	div(id="J_date_news")
+	div(class="row-fluid")
+		div(class="span12")
+			table(class="table table-striped")
+				thead
+					tr
+						th #
+						th 标题
+						th 分享者
+						th 备注
+						th 标签
+				tbody
+					- if (result.length)
+							- result.forEach(function(item){
+								- if (item.title && item.url)
+									tr
+										td #{item.date.getFullYear()+'-'+item.date.getMonth()+1 + '-' +item.date.getDate()}
+										td
+											a(href="#{item.url}",target="_blank")
+												#{item.title}
+										td #{item.author}
+										td #{item.note}
+										td #{item.tag}
+							- })
+
 script(src="../javascripts/jquery.js")
 script(src="../bootstrap/js/bootstrap.min.js")
-script(src="../javascripts/fullcalendar.min.js")
+script(src="../bootstrap/js/bootstrap-modal.js")

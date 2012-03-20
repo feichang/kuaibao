@@ -41,6 +41,7 @@ app.get('/', routes.page_index);
 app.get('/history',routes.page_history);
 app.get('/share', routes.page_share);
 app.get('/feed', routes.page_feed);
+app.get('/all', routes.get_all);
 app.post('/addArticle', routes.add_article);
 app.post('/addFeed', routes.add_feed);
 app.post('/getNewsByDate', routes.read_by_date);
